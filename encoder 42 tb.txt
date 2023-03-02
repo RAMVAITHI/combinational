@@ -1,0 +1,14 @@
+module encodertb;
+ reg[3:0] Y;
+ wire[1:0] A;
+encoder dut(.A(A),.Y(Y));
+initial
+begin
+ $dumpfile("dump.vcd");
+ $dumpvars(2);
+#2 Y=4'b0001;
+ #2 Y=4'b001x;
+ #2 Y=4'b01xx;
+ #2 Y=4'b1xxx;
+end
+endmodule

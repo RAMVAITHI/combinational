@@ -1,0 +1,9 @@
+module mux2*1_gate(a,b,select,y);
+input a,b,select;
+output y;
+wire i1,i2,i3;
+and (i2,i1,a);
+and (i3,b,select);
+not (i1,select);
+or (y,i2,i3);
+endmodule

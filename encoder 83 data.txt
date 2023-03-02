@@ -1,0 +1,12 @@
+module encoder_83_(a,b);
+ 
+ input [7:0]a;
+ output [2:0]b;
+ wire temp1,temp2,temp3; 
+ or o1(temp1,a[4],a[5],a[6],a[7]);
+ or o2(temp2,a[2],a[3],a[6],a[7]);
+ or o3(temp3,a[1],a[3],a[5],a[7]);
+ and a1(b[2],temp1);
+ and a2(b[1],temp2);
+ and a3(b[0],temp3);
+endmodule
